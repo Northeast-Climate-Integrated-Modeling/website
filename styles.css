@@ -1,0 +1,503 @@
+/* Increase text size of navigation links */
+.navbar-nav .nav-link {
+  font-size: 1.35rem !important; /* Default is ~0.9rem to 1rem */
+  font-weight: 400 !important;   /* not bolded*/
+}
+/* Increase text size of the site title/brand text (if displayed next to logo) */
+.navbar-brand {
+  font-size: 1.35rem !important;
+  font-weight: 400 !important;
+}
+/* Add a white rounded background badge to the navbar logo */
+.navbar-brand img,
+.navbar-logo {
+  background-color: #ffffff !important;
+  max-height: none !important; /* Overrides Quarto's hidden height cap so the image can be resized to be larger */
+  padding: 0px;           /* Inner spacing around the logo */
+  border-radius: 100px;         /* Rounded corners */
+  width:60px !important;      /* Sets equal width and height */
+  height: 60px !important;
+  object-fit: contain;         /* Ensures the circular logo fits cleanly inside */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Full Homepage Transparent Background */
+body {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
+                    url('Figures/OceanWaterBanner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps background stationary while scrolling */
+}
+/* Increase the size of the main page title */
+header.quarto-title-block .title,
+.quarto-title .title,
+h1.title {
+  font-size: 3rem !important;   /* Default is ~2.25rem to 2.5rem */
+  font-weight: 800 !important;  /* Keeps it bold and clear */
+}
+/* Custom Hero Section */
+.hero-banner {
+  background: linear-gradient(135deg, #0b2545 0%, #134074 100%);
+  color: #ffffff;
+  padding: 4rem 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-banner h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hero-banner p {
+  font-size: 1.5rem;
+  max-width: 800px;
+  opacity: 0.9;
+}
+
+/* Category Grid & Cards Layout */
+.category-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.category-card .card-body {
+  padding: 1.5rem;
+}
+
+.category-card .card-title {
+  font-weight: 600;
+  color: #0b2545;
+  margin-bottom: 0.75rem;
+}
+
+.btn-nclim {
+  background-color: #134074;
+  color: white;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.btn-nclim:hover {
+  background-color: #8da9c4;
+  color: #0b2545;
+}
+
+/* Ensure category cards stand out cleanly over the image background */
+.category-card {
+  background-color: rgba(255, 255, 255, 0.6) !important; /* Slightly solid white backing for card readability */
+}
+
+/* Ensure Backgound text stands out cleanly over the image background */
+.background-callout {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1.1rem !important; /* Adjust size */
+}
+
+.background-heading h2 {
+  font-size: 2.25rem !important; /* Adjust size */
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #000;
+  font-weight: 800;
+}
+/* Heading Style for Focus Areas (No background behind it) */
+.FocusArea-callout h2 {
+  font-size: 2.25rem !important; /* Adjust size*/
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #000;
+  font-weight: 800;
+}
+/* Contributor Headshot Styling */
+.card-body img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;         /* Prevents stretching or distortion */
+  border-radius: 50%;        /* Crops image into a perfect circle */
+  margin-bottom: 0.0rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12); /* Soft drop shadow */
+  border: 3px solid #ffffff;  /* Clean white border ring */
+}
+/* Force all text elements in contributor cards to be centered */
+.card-body p,
+.card-body a{
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+/* Hide Quarto's automatic anchor link icons on card headings */
+.card-body .anchorjs-link,
+.card-body a.header-section-number,
+.card-body h3 a,
+.card-body h4 a {
+  display: none !important;
+}
+
+/* Fix Bootstrap row card stretching */
+.row-cols-lg-4 > .col {
+  flex: 0 0 auto !important;
+  width: 25% !important; /* Forces each card to occupy exactly 1/4 of the container width */
+}
+
+@media (max-width: 991px) {
+  .row-cols-lg-4 > .col {
+    width: 33.333% !important; /* 3 cards per row on mid-size screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .row-cols-lg-4 > .col {
+    width: 50% !important; /* 2 cards per row on mobile/tablets */
+  }
+}
+
+@media (max-width: 575px) {
+  .row-cols-lg-4 > .col {
+    width: 100% !important; /* Single stacked cards on small mobile screens */
+  }
+}
+
+/* Custom 4-Column Card Grid for Quarto */
+.card-grid-4 {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important; /* Forces exactly 4 equal columns */
+  gap: 0.5rem !important;                            /* Card spacing */
+  margin-bottom: 2rem !important;
+}
+
+/* Ensure cards take full height within the grid cell */
+.card-grid-4 .card {
+  height: 100% !important;
+}
+
+/* Responsive adjustments for tablet and mobile screens */
+@media (max-width: 992px) {
+  .card-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .card-grid-4 {
+    grid-template-columns: 1fr !important;            /* 1 column on mobile */
+  }
+}
+
+/*########### Publications.qmd Styling ######## */
+/* =========================================================
+ PAGE LAYOUT
+========================================================= */
+body {
+ font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.centered-div {
+ max-width: 1320px;
+ margin: 0 auto;
+ padding: 0 15px;
+}
+
+/* =========================================================
+ PUBLICATION CARDS
+========================================================= */
+.publication-card {
+ border: 1px solid #dee2e6;
+ background-color: #dee2e6;
+ border-radius: 0.375rem;
+ box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+ margin-bottom: 1.5rem;
+ overflow: hidden;
+ display: flex;
+ flex-direction: row;
+ align-items: stretch;
+ transition: box-shadow 0.2s ease;
+ min-height: 50px;
+ max-height: 180px;
+}
+
+.publication-card:hover {
+ box-shadow: 0 0.5rem 1rem rgba(0,0,0,.1);
+}
+
+/* Media column (left side) */
+.publication-media {
+ flex: 0 0 300px;
+ max-width: 150px;
+ overflow: hidden;
+ position: relative;
+ display: flex;
+ padding: 0.9rem 0 0.0rem 0.9rem; /* top: 0.5rem, right: 0, bottom: 0.5rem, left: 0.5rem */
+}
+
+.publication-media img {
+ width: 100%;
+ height: 100%;
+  max-height: 150px; /* or whatever height looks good to you */
+ object-fit: cover;
+ display: block;
+ flex: 1;
+}
+
+/* Content column (right side) */
+.publication-content {
+ flex: 1;
+ padding: 1rem 1.25rem;
+ display: flex;
+ flex-direction: column;
+}
+
+.publication-title {
+ font-size: 1.25rem;
+ font-weight: 500;
+ line-height: 1.1;
+ margin-bottom: 0.00rem;
+ color: #212529;
+ display: inline-block;
+}
+
+.publication-title a {
+ font-size: 1.25rem;
+ font-weight: 500;
+ line-height: 1.1;
+ color: #212529!important;
+ text-decoration: none!important;
+}
+
+.publication-title a:hover {
+ font-size: 1.25rem;
+ font-weight: 500;
+ line-height: 1.1;
+ color: #0d6efd!important; /* or whatever accent color you use */
+ text-decoration: none!important;
+}
+
+.publication-authors {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ font-size: 0.875rem;
+ color: #6c757d;
+ margin-bottom: 0.75rem;
+}
+
+.publication-year {
+ font-size: 1rem;
+ line-height: 1.5;
+ color: #212529;
+}
+
+.publication-link {
+ text-align: right;
+ padding-top: 0.5rem;
+}
+
+.publication-link a {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.35rem;
+ color: #0d6efd;
+ text-decoration: none;
+ font-size: 0.95rem;
+ font-weight: 500;
+}
+
+.publication-link a:hover {
+ color: #0a58ca;
+ text-decoration: underline;
+}
+
+/* Responsive: stack on tablet/mobile */
+@media (max-width: 767px) {
+.publication-card {
+ flex-direction: column;
+ }
+.publication-media {
+ flex: 0 0 200px;
+ max-width: 100%;
+ height: 200px;
+ }
+.publication-media img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ }
+}
+
+@media (max-width: 576px) {
+.publication-media {
+ display: none;
+ }
+}
+
+/* Note callout box */
+.callout-note {
+ background-color: #eef4ff; /* light blue background */
+ border-left: 5px solid #0b2545; /* accent border */
+ border-radius: 8px;
+ padding: 1rem 1.25rem;
+ font-size: 1.05rem;
+}
+
+/* Callout title text */
+.callout-note.callout-title {
+ font-weight: 700;
+ color: #0b2545;
+ background-color: rgba(238, 244, 255, 0.5); /* same blue, 50% opacity */
+ padding: 0.25rem 0.5rem; /* small padding so the background is visible */
+ border-radius: 4px;
+}
+
+/* Funder Logos Section */
+.funders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+  margin-top: 1.5rem;
+}
+
+.funder-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 110px;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;                  /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.funder-card:hover {
+  transform: translateY(-4px);           /* Subtle lift effect on hover */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.funder-card img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;                   /* Preserves original logo aspect ratios */
+}
+
+.funder-row-single {
+ display: flex;
+ justify-content: center;
+ margin-bottom: 1.5rem;
+}
+
+.funder-card-large {
+ width: 280px; /* adjust to taste */
+ height: auto;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;                  /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* =========================================================
+ PROJECT PAGE CARDS
+========================================================= */
+.project-card {
+ border: 1px solid #dee2e6;
+ background-color: #dee2e6;
+ border-radius: 0.375rem;
+ box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+ margin-bottom: 1.5rem;
+ overflow: visible;
+ display: flex;
+ flex-direction: column;
+ align-items: stretch;
+ transition: box-shadow 0.2s ease;
+ min-height: 50px;
+ max-height: none;
+}
+
+.project-content {
+ /* stays full-width on top */
+}
+
+/* New: wraps the bottom row (image + links) */
+.project-bottom-row {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ gap: 1rem;
+ padding: 0 1rem 1rem; /* matches card padding */
+}
+
+.project-media {
+ flex: 0 0 30%; /* image column takes ~30% of the row */
+ min-width: 150px;     /* safety floor so it doesn't get tiny */
+}
+
+.project-media img {
+ display: block;
+ max-width: 200px; 
+ height: auto;
+}
+
+.project-link {
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+ flex: 1; /* fills remaining space to the right */
+}
+
+.project-link a {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 0.5rem 0.75rem;
+ background: #f6f8fa;
+ border: 1px solid #d0d7de;
+ border-radius: 6px;
+ text-decoration: none;
+ color: #0969da;
+ font-size: 0.875rem;
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+ transition: background 0.15s;
+}
+
+.project-link a:hover {
+ background: #eaeef2;
+}
+
+.project-link a::before {
+ content: "";
+ display: inline-block;
+ width: 25px;
+ height: 25px;
+ background: url("Figures/github-logo.png") no-repeat center;
+ background-size: contain;
+ flex-shrink: 0;
+}
